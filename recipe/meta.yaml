@@ -1,4 +1,4 @@
-{% set version = '0.1.3' %}
+{% set version = "0.1.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/gglogo_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/gglogo/gglogo_{{ version }}.tar.gz
-  sha256: 76e14b7313a440d6c15598375ce58d822a3ab1c4991755ef14e312f27b5c00b7
+  sha256: 97e05924204b739266264b40da209653dded91d17e52dc7c5f320f349553127b
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
