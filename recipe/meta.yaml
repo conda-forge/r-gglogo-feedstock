@@ -1,4 +1,4 @@
-{% set version = '0.1.4' %}
+{% set version = '0.1.5' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +10,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/gglogo_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/gglogo/gglogo_{{ version }}.tar.gz
-  sha256: 97e05924204b739266264b40da209653dded91d17e52dc7c5f320f349553127b
+  sha256: 1416379745ea69b1707d9fe3e7411b2a763aadae94b6652e64bfe9c9b6068f23
 
 build:
   merge_build_host: True  # [win]
   number: 0
-  noarch: generic
+  skip: True  # [r_base == "3.5.1"]
   rpaths:
     - lib/R/lib/
     - lib/
@@ -33,6 +33,8 @@ requirements:
     - r-plyr
     - r-purrr
     - r-reshape2
+    - r-rlang
+    - r-tidyr
   run:
     - r-base
     - r-dplyr
@@ -43,6 +45,8 @@ requirements:
     - r-plyr
     - r-purrr
     - r-reshape2
+    - r-rlang
+    - r-tidyr
 
 test:
   commands:
@@ -66,22 +70,23 @@ extra:
 
 # Package: gglogo
 # Title: Geom for Logo Sequence Plots
-# Version: 0.1.4
+# Version: 0.1.5
 # Authors@R: c( person("Heike", "Hofmann", email = "hofmann@iastate.edu", role = "aut"), person("Eric", "Hare", email = "eric@oaiti.org", role = c("aut", "cre")), person("GGobi Foundation", role = "aut"))
 # License: GPL-3
 # URL: https://github.com/heike/gglogo
 # BugReports: https://github.com/heike/gglogo/issues
-# Depends: R (>= 3.1)
-# Imports: ggplot2 (>= 2.0.0), grid, jpeg, plyr, dplyr, magrittr, purrr, reshape2, knitr
+# Depends: R (>= 3.6)
+# Imports: ggplot2 (>= 2.0.0), grid, jpeg, plyr, dplyr, tidyr, magrittr, purrr, reshape2, knitr, rlang
 # Suggests: RColorBrewer
 # Description: Visualize sequences in (modified) logo plots. The design choices used by these logo plots allow sequencing data to be more easily analyzed. Because it is integrated into the 'ggplot2' geom framework, these logo plots support native features such as faceting.
 # Collate: 'logos.r' 'text.r' 'thin.r' 'data.r' 'alphabet.r' 'position.r'
-# RoxygenNote: 6.1.1
+# RoxygenNote: 7.0.2
+# Encoding: UTF-8
 # VignetteBuilder: knitr
 # LazyData: true
 # NeedsCompilation: no
-# Packaged: 2019-06-28 00:31:15 UTC; erichare
+# Packaged: 2020-01-28 20:43:59 UTC; erichare
 # Author: Heike Hofmann [aut], Eric Hare [aut, cre], GGobi Foundation [aut]
 # Maintainer: Eric Hare <eric@oaiti.org>
 # Repository: CRAN
-# Date/Publication: 2019-06-28 14:20:03 UTC
+# Date/Publication: 2020-01-28 21:40:07 UTC
