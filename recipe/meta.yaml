@@ -14,8 +14,8 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1
-  skip: True  # [r_base == "3.5.1"]
+  number: 2
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -23,6 +23,7 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-dplyr
@@ -55,7 +56,7 @@ test:
 
 about:
   home: https://github.com/heike/gglogo
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Visualize sequences in (modified) logo plots. The design choices used by these logo
     plots allow sequencing data to be more easily analyzed. Because it is integrated
     into the 'ggplot2' geom framework, these logo plots support native features such
