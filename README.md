@@ -1,11 +1,11 @@
-About r-gglogo
-==============
+About r-gglogo-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gglogo-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/heike/gglogo
 
 Package license: GPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gglogo-feedstock/blob/main/LICENSE.txt)
 
 Summary: Visualize sequences in (modified) logo plots. The design choices used by these logo plots allow sequencing data to be more easily analyzed. Because it is integrated into the 'ggplot2' geom framework, these logo plots support native features such as faceting.
 
