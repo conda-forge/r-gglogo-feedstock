@@ -1,6 +1,5 @@
 {% set version = '0.1.5' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-gglogo
@@ -13,8 +12,7 @@ source:
   sha256: 1416379745ea69b1707d9fe3e7411b2a763aadae94b6652e64bfe9c9b6068f23
 
 build:
-  merge_build_host: True  # [win]
-  number: 4
+  number: 5
   noarch: generic
   rpaths:
     - lib/R/lib/
